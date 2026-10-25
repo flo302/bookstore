@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Книжный магазин</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* === ЗАДАНИЕ ЛАБЫ: СЕЛЕКТОРЫ === */
+        body { font-family: Georgia, serif; }
+        .filter-sidebar { background-color: transparent; padding-right: 20px; }
+        /* Добавляем hover-эффект для карточек, чтобы было видно, что они кликабельные */
+        .book-card { background-color: white; border: 1px solid #ccc; transition: transform 0.2s; }
+        .book-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        #catalog-title { font-size: 42px; font-weight: bold; }
+        .filter-form input[type="text"] { border-radius: 20px; border: 1px solid #ccc; }
+        .book-card .price { font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom border-dark py-3">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+                <div class="bg-black rounded-1 me-2" style="width: 35px; height: 35px;"></div>
+                <span style="line-height: 1; font-size: 14px;">Название<br>магазина</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center">
+              <a class="nav-link me-4 text-dark fw-bold" href="index.html">Главная</a>
+              <a class="nav-link me-4 text-dark fw-bold" href="catalog.html">Каталог</a>
+              <a class="nav-link me-4 text-dark fw-bold" href="cart.html">Корзина</a>
+              <a href="login.html" class="text-dark"><i class="bi bi-person fs-5"></i></a>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1" style="background-color: #d1d5db;">
+        <div class="container py-5">
+            <h1 id="catalog-title" class="mb-4 text-dark">Каталог</h1>
+            
+            <div class="row">
+                <aside class="col-md-3 mb-4">
+                    <div class="filter-sidebar">
+                        <form class="filter-form" action="catalog.html" method="GET">
+                            <h4 class="fw-bold mb-3">Жанры</h4>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="genre" value="fantasy" id="genre1">
+                                <label class="form-check-label" for="genre1">Фантастика</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="genre" value="classic" id="genre2">
+                                <label class="form-check-label" for="genre2">Классика</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="genre" value="detective" id="genre3">
+                                <label class="form-check-label" for="genre3">Детективы</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" name="genre" value="prose" id="genre4">
+                                <label class="form-check-label" for="genre4">Современная проза</label>
+                            </div>
+                            <hr class="my-4 border-dark">
+                            <h4 class="fw-bold mb-3">Автор</h4>
+                            <div class="mb-4">
+                                <input type="text" name="author" class="form-control form-control-sm" placeholder="Поиск">
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+
+                <section class="col-md-9">
+                    <div class="row g-3">
+
+                        <!-- Карточка 1 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 2 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 3 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 4 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 5 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 6 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 7 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 8 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- Карточка 9 -->
+                        <div class="col-md-4">
+                            <a href="product.html" class="text-decoration-none text-dark d-block h-100">
+                                <article class="book-card rounded-4 p-3 h-100 d-flex">
+                                    <div class="bg-black text-white rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 80px; height: 120px;"></div>
+                                    <div class="d-flex flex-column justify-content-between flex-grow-1">
+                                        <div>
+                                            <h6 class="fw-bold mb-1" style="font-size: 14px;">Название книги</h6>
+                                            <p class="text-muted mb-0" style="font-size: 12px;">Автор</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end mt-2">
+                                            <span class="price">цена</span>
+                                            <div class="bg-black rounded-1" style="width: 15px; height: 15px;"></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-secondary-subtle border-top border-dark p-3 text-center">
+        <a href="admin.html" class="btn btn-dark fw-bold rounded-3 px-4 py-2">Административная панель</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
